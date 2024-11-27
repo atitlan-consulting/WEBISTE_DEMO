@@ -1,0 +1,742 @@
+
+/* Import Font Raleway */
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Import Font Raleway */
+@font-face {
+    font-family: 'Plantin';
+    src: url('../fonts/PlantinMTProLight.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Import Font Raleway */
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI-VF.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Refined Color Scheme */
+:root {
+    --primary-color: #00bfffff; /* Main Blue */
+    --primary-color-light: #b3e6ffff; /* Lighter Blue */
+    --primary-color-dark: #007acc; /* Darker Blue */
+
+    --secondary-color: #ff8c00ff; /* Main Orange */
+    --secondary-color-light: #f39c12; /* Lighter Orange */
+    --secondary-color-dark: #d35400; /* Darker Orange */
+
+    --neutral-light: #ecf0f1; /* Light Grey */
+    --neutral: #bdc3c7; /* Mid Grey */
+    --neutral-dark: #7f8c8d; /* Dark Grey */
+
+    --background-color: #2d3436; /* Background */
+    --background-color-light: #34495e; /* Lighter Background */
+    --text-color: #f4f4f4; /* Primary text color */
+    --text-secondary: #bdc3c7; /* Secondary texqt color */
+}
+
+/* General Reset */
+body {
+    font-family: 'Raleway', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-secondary);
+    /*background-color: var(--background-color);*/
+    background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% );
+}
+
+/* Headings Styling */
+h1 {
+    font-family: 'Raleway', Arial, sans-serif;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-family: 'Raleway', Arial, sans-serif;
+    color: var(--text-secondary);
+}
+
+
+h3, h4, h5, h6 {
+    font-family: 'Raleway', Arial, sans-serif;
+    color: var(--text-secondary);
+}
+
+.drop-cap {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+.drop-cap::first-letter {
+font-size: 3em; /* Make the first letter larger */
+font-weight: bold; /* Optionally make it bold */
+float: left; /* Align it to the left */
+margin-right: 0.1em; /* Add space between the drop cap and the text */
+line-height: 1; /* Align it vertically with the text */
+color: var(--secondary-color)!important; /* Optional: Color the first letter */
+}
+
+/* Override Bootstrap Navbar Styles */
+.navbar {
+    background-color: var(--background-color) !important; /* Custom background color */
+    color: #ffffff !important; /* Text color */
+    font-family: 'Raleway', sans-serif; /* Custom font family */
+}
+
+/* Style Navbar Links */
+.navbar .nav-link {
+    color: #ffffff !important; /* Link color */
+    font-size: 1rem; /* Adjust font size */
+    text-transform: uppercase; /* Optional: Transform to uppercase */
+}
+
+.navbar .nav-link:hover {
+    color: var(--secondary-color)!important; /* Hover color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 1.5rem; /* Adjust brand font size */
+    font-weight: bold; /* Make it bold */
+    color: #ff8c00 !important; /* Custom brand color */
+}
+
+.navbar-brand:hover {
+    color: #f39c12 !important; /* Hover effect for brand */
+}
+
+
+/* Hero Section */
+.hero {
+    /*background: url('../img/hero-large.jpg') no-repeat center center/cover;*/
+    background-color: var(--background-color);
+    text-align: center;
+    padding: 100px 20px;
+    color: var(--text-color);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+}
+
+.hero .btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.hero .btn:hover {
+    background-color: var(--primary-color-light);
+}
+
+/* Content Blocks */
+.content-block {
+    padding: 60px 20px;
+    margin: 20px 0;
+    background-color: var(--background-color);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-block h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.content-block h3 {
+    color: var(--neutral-light);
+    margin-bottom: 20px;
+}
+
+.content-block p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* General Styling for About Section */
+.about-section {
+    background-color: #2d3436; /* Dark background */
+    padding: 60px 20px;
+    text-align: left;
+    /* Change H2 color */
+    color: var(--primary-color-light);
+}
+
+/* Profile Image Styling */
+.profile-img {
+    flex-shrink: 0; /* Ensure images stay the same size */
+}
+
+.profile-img img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image round */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.profile-img img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+}
+
+/* Profile Text Styling */
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.profile-text p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Responsive Layout Tweaks */
+@media (min-width: 768px) {
+    .profile-img {
+        margin-right: 20px;
+    }
+
+    .profile-text {
+        text-align: left;
+    }
+
+    .profile-img.order-md-2 {
+        margin-left: 20px; /* Add space for reverse order on larger screens */
+        margin-right: 0; /* Reset right margin */
+    }
+}
+
+/* General Section Styling */
+#services {
+    background-color: #2d3436;
+    color: white;
+    padding: 60px 20px;
+}
+
+/* Text Content Styling */
+#services h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* General List Styling */
+ul.custom-list {
+    list-style-type: disc; /* Use disc bullets */
+    margin: 0; /* Remove default margin */
+    padding-left: 2em; /* Indent from the paragraph by a tab */
+    color: #ffffff; /* Set bullet and text color */
+}
+
+/* Adjust spacing between list items */
+ul.custom-list li {
+    margin-bottom: 0.5em; /* Add space between list items */
+    font-size: 1rem; /* Adjust font size */
+    line-height: 1.25; /* Improve readability */
+}
+
+.carousel {
+    max-width: 100%; /* Ensure it fits within the container */
+    height: 490px; /* Adjust height as needed */
+    border-radius: 8px; /* Optional, match your site's design */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures images scale proportionally */
+}
+
+/* Resourcing Styling */
+
+/* General Section Styling */
+#resources {
+    background-color: #2d3436; /* Dark background */
+    color: var(--text-secondary);
+    padding: 60px 20px;
+}
+
+#resources h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Subsection Titles */
+.resource-category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.text-primary {
+    color: var(--primary-color-light) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color-light) !important;
+}
+
+.text-success {
+    color: var(--neutral-light) !important;
+}
+
+/* Resource Links */
+.resource-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resource-category ul li h5 a {
+    color: #00bfff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resource-category ul li h5 a:hover {
+    color: #ff8c00; /* Highlight on hover */
+}
+
+/* Muted Text */
+.text-muted {
+    font-size: 0.9rem;
+    color: #dcdde1;
+}
+
+/* Section Spacing */
+.resource-category {
+    margin-bottom: 40px;
+}
+
+/* General Section Styling */
+#resources {
+    background-color: #2d3436; /* Dark background */
+    color: white;
+    padding: 60px 20px;
+}
+
+/* Section Title */
+#resources h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+
+
+.icon {
+    font-size: 2.5rem; /* Adjust size of the icons */
+    margin: 10px; /* Space between icons */
+    opacity: 0; /* Hidden initially */
+    transform: translateY(20px); /* Positioned slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+    fill: white; /* Icon color */   
+    color: white;
+}
+
+/* Visible State */
+.icon.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Back to original position */
+    color: var(--primary-color); /* Icon color */
+}
+
+/* Category Headings */
+#resources h3 {
+    font-size: 1.8rem;
+    margin-top: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .icon {
+        font-size: 2rem; /* Smaller icons on mobile */
+    }
+
+    #resources h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .resource-category {
+        margin-bottom: 30px;
+    }
+
+    #resources h2 {
+        font-size: 2rem;
+    }
+
+    .resource-category h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* General Styling for Accordion */
+.accordion-item {
+    border: none; /* Remove default border */
+    margin-bottom: 10px; /* Add spacing between items */
+    background-color: var(--background-color); /* Dark background color for accordion */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow issues */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Accordion Header */
+.accordion-header .accordion-button {
+    background-color: var(--background-color-light); /* Slightly lighter than the accordion body */
+    color: white; /* Text color */
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 15px 20px; /* Increase padding for larger clickable area */
+    border-radius: 0; /* Remove rounded corners for uniform look */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Accordion Button Hover */
+.accordion-header .accordion-button:hover {
+    background-color: #1abc9c; /* Hover color */
+    color: white; /* Keep text color consistent */
+}
+
+/* Accordion Button Active State */
+.accordion-header .accordion-button:not(.collapsed) {
+    background-color: var(--neutral); /* Active state background */
+    color: white;
+    box-shadow: none; /* Remove shadow for active state */
+}
+
+/* Accordion Body */
+.accordion-body {
+    background-color: var(--background-color-light); /* Slightly darker than the button */
+    color: #ecf0f1; /* Text color for better contrast */
+    padding: 20px; /* Padding for content */
+    font-size: 1rem;
+    line-height: 1.5; /* Better readability */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+}
+
+/* Links in Accordion Body */
+.accordion-body a {
+    color: var(--text-color); /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.accordion-body a:hover {
+    color: #16a085; /* Hover color for links */
+}
+
+/* Add Spacing for the Accordion */
+.accordion {
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .accordion-header .accordion-button {
+        font-size: 1rem; /* Smaller font size on mobile */
+        padding: 10px 15px; /* Reduce padding for smaller screens */
+    }
+
+    .accordion-body {
+        font-size: 0.9rem; /* Adjust font size for readability */
+        padding: 15px; /* Reduce padding */
+    }
+}
+
+
+
+/* Flip Card Container */
+.flip-card {
+    width: 100%;
+    max-width: 300px; /* Restrict maximum width of the card */
+    height: 400px; /* Adjust height to fit content */
+    perspective: 1000px; /* Enables 3D effect */
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Inner Card */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Front and Back Sides */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    box-sizing: border-box; /* Ensure padding doesn’t affect card size */
+    overflow: hidden; /* Prevent content overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+/* Front Side Styling */
+.flip-card-front {
+    background-color: var(--primary-color-light);
+    color: white;
+}
+
+/* Back Side Styling */
+.flip-card-back {
+    background-color: var(--secondary-color-light);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Image Styling */
+.flip-card-front img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Space between image and text */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Text Content */
+.flip-card-front h3, .flip-card-front p,
+.flip-card-back h3, .flip-card-back p {
+    margin: 10px 0; /* Space around text elements */
+    font-size: 1rem;
+    line-height: 1.4;
+    overflow-wrap: break-word; /* Prevent long words from overflowing */
+}
+
+/* Flip Card Hover Effect */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* This triggers the flip on hover */
+}
+
+/* Ensure backface visibility and rotation */
+.flip-card-back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+/* Thumbnail Container */
+.thumbnail-container {
+    position: relative;
+    width: 200px; /* Adjust to desired thumbnail size */
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px; /* Optional rounded corners */
+    cursor: pointer;
+}
+
+/* Thumbnail Image */
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image scales properly */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth hover animation */
+}
+
+/* Hover Effect */
+.thumbnail-container:hover .thumbnail {
+    position: absolute; /* Position the image over the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    z-index: 9999; /* Ensure it appears on top */
+    object-fit: contain; /* Adjust the image scaling */
+    transform: scale(1.1); /* Slight zoom-in effect */
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth expansion */
+    border-radius: 0; /* Remove rounded corners on fullscreen */
+}
+
+/* Background Fade Effect (Optional) */
+.thumbnail-container:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Add a dark background overlay */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.thumbnail-container:hover .thumbnail {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (max-width: 768px) {
+    .thumbnail-container:hover .thumbnail {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* Basic styling for the map container */
+#map {
+    width: 100% !important;
+    height: 500px !important;
+    border-radius: 8px; /* Optional rounded corners */
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+}
+
+/* Carousel Styling */
+.carousel {
+    position: relative;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--neutral);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--primary-color);
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--neutral);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    color: var(--primary-color);
+}
+
+
+/* Logo Styling */
+.logo-text {
+    width: auto; /* Full logo size */
+    height: 60px;
+    display: inline-block;
+}
+
+.logo-icon {
+    width: auto; /* Icon-only size */
+    height: 60px;
+    display: inline-block;
+}
+/* Footer */
+footer {
+    background-color: var(--neutral-dark);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Media Queries for Logo */
+@media (max-width: 768px) {
+    .logo-text {
+        display: none; /* Hide text logo on smaller screens */
+    }
+    .logo-icon {
+        display: inline-block; /* Show icon-only logo */
+    }
+}
+
+@media (min-width: 769px) {
+    .logo-text {
+        display: inline-block; /* Show text logo on larger screens */
+    }
+    .logo-icon {
+        display: none; /* Hide icon-only logo */
+    }
+}
+
+.contact .btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.contact .btn:hover {
+    background-color: var(--primary-color-light);
+}
